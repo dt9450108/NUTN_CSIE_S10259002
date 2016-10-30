@@ -1,0 +1,86 @@
+p {
+    font-size: 16px;
+}
+body {
+    background-color: #f7f7f7;
+}
+.page-container {
+    background-color: #FFF;
+    padding: 20px 0 0 20px;
+}
+.page-header-style {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    margin: 0 0 0 0;
+    padding: 0;
+}
+.page-header-style h1 {
+    margin: 0;
+    padding: 3vw 0 1.5vw 3vw;
+    font-size: 4vw;
+}
+.page-header-style h1 small {
+    font-size: 1.3vw;
+    color: #C8E6C9;
+}
+.p-vertial-center {
+    line-height: 2em;
+}
+.p-letter-spacing {
+    letter-spacing: 0.12em;
+}
+.display-inline {
+    display: inline-block;
+}
+.row-margin-bottom {
+    margin-bottom: 10px;
+}
+.col-no-margin {
+    margin: 0px;
+}
+.col-no-padding {
+    padding: 0px;
+}
+.row-style {
+    background-color: #ffffff;
+}
+.col-style {
+    background-color: #ffffff;
+}
+.diff-equation-input input {
+    background-color: #ffffff;
+    border-bottom: #666 1px solid;
+    color: #000;
+    padding-left: 5px;
+    margin: 0px;
+    font-size: 16px;
+    width: 100%;
+    letter-spacing: 0.12em;
+}
+.tooltip-inner {
+    max-width: 200px;
+    width: 180px;
+}
+
+/*** Works on common browsers ***/
+
+::selection {
+    background-color: #4CAF50;
+    color: #C8E6C9;
+}
+::-moz-selection {
+    background-color: #4CAF50;
+    color: #C8E6C9;
+}
+::-o-selection {
+    background-color: #4CAF50;
+    color: #C8E6C9;
+}
+::-ms-selection {
+    background-color: #4CAF50;
+    color: #C8E6C9;
+}
+::-webkit-selection {
+    background-color: #4CAF50;
+    color: #C8E6C9;
+}

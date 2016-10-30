@@ -1,0 +1,44 @@
+﻿<%@ Master Language="VB" CodeFile="JustPhotoMaster.master.vb" Inherits="JustPhotoMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Just Photos</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/JustPhotoStyle.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="Scripts/JustPhotoApplication.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <header>
+            <div class="wrapper">
+                <asp:Button ID="mpHeadLogoBtn" runat="server" CssClass="logo" />
+                <span id="accOpt">
+                    <asp:ImageButton ID="headPicture" runat="server" Height="35px" Width="35px" ImageUrl="~/img/guest_35_35_tran.png" Visible="True" />
+                    <%-- before sign in --%>
+                    <asp:Button ID="jpt_masterPageSignup" runat="server" Text="註冊" />
+                    <asp:Button ID="jpt_masterPageLogin" runat="server" Text="登入" />
+                    <%-- after sign in --%>
+                    <asp:Button ID="jpt_masterPageAccount" runat="server" Text="[account]" Visible="False" />
+                    <asp:Button ID="jpt_masterPagePersonal" runat="server" Text="個人頁面" Visible="False" />
+                    <asp:Button ID="jpt_masterPageUpload" runat="server" Text="上傳" Visible="False" />
+                    <asp:Button ID="jpt_masterPageLogout" runat="server" Text="登出" Visible="False"/>
+                </span>  
+            </div>
+        </header>
+        <div id="content">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            <p>Copyright &copy; </p>
+        </footer>
+    </div>
+    </form>
+</body>
+</html>

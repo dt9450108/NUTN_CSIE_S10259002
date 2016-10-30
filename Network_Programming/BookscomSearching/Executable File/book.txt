@@ -1,0 +1,50 @@
+Java 網路程式設計(第四版)
+Java網路程式設計
+Visual Basic 2012網路程式設計：線上遊戲實作
+完全探索網路程式設計：使用Java(附光碟)
+Linux Network Programming-網路程式設計
+Visual Basic 2008網路程式設計之道(附光碟)
+TCP/IP Java網路程式設計
+Java網路程式設計 第二版
+Visual Basic 網路程式設計(附範例光碟片)(修訂版)
+IPv6網路程式設計
+細說Java 8 Vol. III：資料庫、網路與多執行緒程式設計
+Linux程式設計完全攻略：記憶體管理×檔案系統×多執行緒×網路×多媒體
+一般警察三等(警察資訊管理人員)套書(不含網路安全與資訊倫理、物件導向程式設計)(贈題庫網帳號、雲端課程)
+行動網路應用：JAVA手機程式設計(附光碟)
+Visual C# 2008網路遊戲程式設計
+Visual Basic 2008網路遊戲程式設計
+TCP/IP網路程式實驗與設計
+網頁程式設計的16堂課： HTML5‧CSS3‧JavaScript ‧jQuery‧AJAX‧Bootstrap‧Google Maps
+MATLAB程式設計入門篇(第四版)
+深入淺出 Java 程式設計 第二版
+網頁程式設計ASP.NET 4.6完美入門：適用Visual C# 2015~2012(附教學影片/範例程式)
+Android程式設計入門、應用到精通(增訂第三版)(適用5.X~1.X, Android Wear穿戴式裝置)
+當猛虎遇上Android：一手掌握Android App程式開發與設計(附DVD一片)
+手機應用程式設計超簡單：App Inventor 2零基礎入門班(中文介面增訂版)(附新手入門影音教學/範例/單機與伺服器架設解說pdf)
+手機應用程式設計超簡單：App Inventor 2初學特訓班(中文介面增訂版)(附綜合演練影音教學/範例/單機與伺服器架設解說pdf)
+JavaScript 之美：聽頂尖程式設計師闡述他們的思維
+挑戰PHP/MySQL程式設計與超強專題特訓班(第三版)(適用PHP5~PHP6)
+最新Java2程式設計實例入門與活用-超值增訂第四版(附CD)
+手機應用程式設計超簡單：App Inventor 2資料庫專題特訓班(附資料庫元件影音教學/範例/單機與伺服器架設解說pdf)
+Microsoft Visual Basic 2015：程式設計範例教本
+手機應用程式設計超簡單：App Inventor 2專題特訓班(中文介面增訂版)(附新元件影音教學/範例/單機與伺服器架設解說pdf)
+程式設計師的自我修養：連結、載入、程式庫
+Linux Shell程式設計實力養成：180個實務關鍵技巧徹底詳解
+iOS網路及雲端程式全設備開發
+Arduino互動設計專題與實戰(深入Arduino的全方位指南)(附114段教學與執行影片/範例程式檔)
+PHP 程式設計(第三版)
+MATLAB程式設計進階篇(第二版)
+最新 PHP+MySQL+Ajax 網頁程式設計(第二版)
+深入淺出 HTML5 程式設計
+Visual C# 2013程式設計經典(書附雙光碟-VS 2013Express中文版,範例檔)
+Java程式設計師面試寶典
+精通Android程式介面設計：打造最佳使用者體驗的App
+高等Linux/UNIX程式設計實力養成
+機器人程式設計與實作：使用Java(第二版 / 適用leJOS 0.9)
+FX2/FX2N可程式控制器程式設計與實務(附範例光碟)(修訂二版)
+Visual C++ Web程式設計
+Linux程式設計教學手冊 (第四版)
+IronPython程式設計 - Python與.Net Framework整合實作
+Visual C# 2012程式設計經典(附 VS 2012Express中文版,範例檔)
+全面學會 Visual Basic 2010 程式設計(附光碟)

@@ -1,0 +1,568 @@
+﻿/**Reset**/
+h1, h2, h3, h4, h5, h6, a, li, p {
+    font-family:'微軟正黑體','Arial';
+}
+html, body, header, footer, div {
+    margin:0;
+    padding:0;
+}
+a {
+    text-decoration:none;
+}
+body {
+    background-color:#f7f7f7;
+}
+.wrapper {
+    width:90%;
+    height:auto;
+    margin: 0 auto;
+    box-sizing:border-box;
+}
+input[type='file'] {
+    width:190px;
+}
+input[type='reset'], input[type='submit'] {
+     width:40%;
+     background:#bbb;
+     border:none;
+     line-height: 40px;
+     font-size: 20px;
+     color: #333;
+     margin:5px 10px;
+     font-family:Arial ,'微軟正黑體';
+}
+input[type='reset']:hover, input[type='submit']:hover {
+    background:#2cb72a;
+    color:#fff;
+}
+
+/*header setting*/
+header {
+    width:100%;
+    background-color: #2cb72a;
+    height:50px;
+    position:fixed;
+    box-shadow:0px 1px 15px #333;
+    z-index:10;
+    top:0px;
+}
+header a {
+    color:#fff;
+    font-weight:bold;
+    line-height:50px;
+}
+header a:hover {
+    color:#333;
+}
+header .logo {
+    float: left;
+    background:url('../img/JustPhoto_logo.png') no-repeat left 50%;
+    -moz-background-size:100%;
+    -webkit-background-size:100%;
+    -o-background-size:100%;
+    background-size:100%;        
+    display:inline-block;
+    max-width:160px;
+    min-width:65px;
+    width:15%;
+    height:auto;
+    text-indent: -9999px;
+}
+header .logo:hover {
+    background:url('../img/JustPhoto_logo_o.png') no-repeat left 50%;
+    -moz-background-size:100%;
+    -webkit-background-size:100%;
+    -o-background-size:100%;
+    background-size:100%;        
+}
+
+header #accOpt { /*靠右*/
+    text-align: right;
+    position:relative;
+    float: right;
+    width: 70%;
+    margin-right: 5%;
+}
+header #headPicture {
+    width: 35px;
+    height: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    border: none;
+    margin: 7px 10px;
+}
+header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt_masterPagePersonal, #jpt_masterPageUpload, #jpt_masterPageLogout {
+    position:relative;
+    margin-left: 10px;
+    top:-16px;
+}
+header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt_masterPagePersonal, #jpt_masterPageUpload, #jpt_masterPageLogout {
+    width:auto;
+    height:auto;
+    color:#fff;
+    background:none;
+    font-weight:bold;
+    line-height:21px;
+    font-size:1em;
+    padding:0px; 
+}
+header #jpt_masterPageSignup:hover, #jpt_masterPageLogin:hover, #jpt_masterPageAccount:hover, #jpt_masterPagePersonal:hover, #jpt_masterPageUpload:hover, #jpt_masterPageLogout:hover {
+    color:#333;
+}
+ /*footer setting*/
+footer {
+    width:100%;
+    background:#888;
+    position:fixed;
+    bottom:0;
+    height:45px;
+}
+footer p {
+    color:#eee;
+    text-align:center;
+    font-size:1em;
+    line-height:45px;
+    margin:0;
+}
+/*content setting*/
+#content {
+    width:100%;
+}
+/*personal page setting*/
+.personalBar {
+    width: 100%;
+    height: 230px;
+}
+.personalBar #description {
+    color: #fff;
+    font-family: Arial , '微軟正黑體';
+    font-size: 16px;
+    font-weight: normal;
+    position: relative;
+    top: 60px;
+    width: 70%;
+    height: 70px;
+    display: inline-block;
+}
+.personalBar .personBlock {
+    height: 120px;
+    width: 100%;
+    text-align: right;
+    right: 5%;
+    position: absolute;
+    top: 65px;
+    z-index:5;
+}
+.personalBar #headPic {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #333;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+    margin-left: 0px;
+    background: #fff;
+    box-sizing:border-box;
+}
+.personalBar #name {
+    color: #333;
+    font-size: 20px;
+    font-family: Arial , '微軟正黑體';
+    top:0px;
+    position:relative;
+    text-align:right;
+    margin-right:1%;
+}
+.personalBar .grayBar {
+    width: 100%;
+    height: 130px;
+    background: #515151;
+}
+.personalBar .whiteBar {
+    width: 100%;
+    height: 75px;
+    background: #fff;
+}
+/********************content block setting**********************/
+.block {
+    width: 720px;
+    height: auto;
+    border: 2px solid #000;
+    margin: 50px auto;
+    padding: 20px 40px 40px 40px;
+    box-sizing:border-box;
+    background:#fff;
+}
+.block .photo {
+    width: 640px;
+    height: auto;
+}
+.block .user {
+    width: 35px;
+    height: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    border: none;
+    margin: 20px 10px 0px 0px;
+}
+.block .userName {
+    color: #707070;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial;
+}
+.block .photoName {
+    color: #707070;
+    font-size: 20px;
+    font-weight:normal;
+    font-family: AArial,'微軟正黑體';
+    padding-left:20px;
+}
+/*login signup page setting*/
+#loginBlock {
+    width:320px;
+    height:300px;
+    margin-top: 10%;
+    margin-left : auto;
+    margin-right : auto;
+    font-family:Arial;
+    background:#fff;
+}
+#loginBlock tr td{
+    height:70px;
+}
+#loginBlock th {
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:2px solid #eee;
+}
+#loginBlock input {
+    width:160px;
+    line-height:30px;
+}
+#loginBlock input[type="submit"] {
+    width:100%;
+    background:#bbb;
+    border:none;
+    line-height: 40px;
+    font-size: 17px;
+    color: #333;
+    margin:0;
+}
+#loginBlock input[type="submit"]:hover {
+    background:#2cb72a;
+    color:#fff;
+}
+#uploadBlock {
+    font-family:Arial,'微軟正黑體';
+    width:750px;
+    height:auto;
+    margin:7% auto;
+    font-family:Arial;
+    background:#fff;
+}
+#uploadBlock th {
+    width:100%;
+    text-align:center;
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:1px solid #eee;
+}
+#uploadBlock tr {
+    height: 50px;
+    width:auto;
+}
+#uploadBlock td {
+    width:100%;
+}
+
+/*Default page ad block*/
+#ad {
+    background-image: url('../img/dpgbg/jpt_bg_5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100%;
+    /*margin:7% auto;*/
+    position: absolute;
+}
+#ad_contents {
+    width: 50%;
+    height:auto;
+    margin:10% auto;
+    background-color:rgba(0, 0, 0, 0.6);
+    border-radius: 50px;
+    text-align:center;
+    padding: 2% 1%;
+}
+#slogan {
+    text-align:center;
+    color: #fff;
+    font-size:50pt;
+    font-family: 微軟正黑體, Arial;
+    font-weight:bold;
+    padding: 2% 0px 5% 0px;
+    display:inline-block;
+}
+#ad_btnpanel {
+    width: 35%;
+    margin:2% auto;
+}
+.btnBlock {
+    text-align:center;
+    width: 5%;
+    min-width:300px;
+    height:auto;
+    margin: 10% auto;
+}
+.btn {
+    display:inline-block;
+    margin: 5px auto 5px auto;
+    background:#bbb;
+    border:none;
+    line-height:50px;
+    text-align:center;
+    font-size:1em;
+    color: #333;
+    height:20%;
+    width:100%;
+}
+.btn:hover {
+    background:#2cb72a;
+    color:#fff;
+}
+.btnLogin {
+    background:#70DF6F;
+    color: #1e1e1e;
+}
+.btnLogin:hover {
+    background:#2cb72a;
+    color:#fff;
+}
+
+.btnNotLogin {
+    background:#2cb72a;
+    color:#fff;
+}
+.btnNotLogin:hover {
+    background:#bbb;
+    color: #333;
+}
+
+#jpt_defaultPageSignup {
+    position:relative;
+}
+#jpt_defaultPageLogin {
+    position:relative;
+    top: 0px;
+    left: 0px;
+}
+
+/* signup page setting*/
+.signupStyle {
+    width: 310px;
+    height: 510px;
+    margin-top: 6%;
+    margin-left : auto;
+    margin-right : auto;
+    font-family:Arial;
+    background:#fff;
+}
+
+.signupStyle th {
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:2px solid #eee;
+}
+
+.signupStyle input {
+    width:160px;
+    line-height:30px;
+}
+
+.signupStyle tr td{
+    height:70px;
+}
+
+.signupNormalTextBox {
+    height: 20px; 
+    width: 180px
+}
+.signupStyle input[type="submit"] {
+    width:100%;
+    background:#bbb;
+    border:none;
+    line-height: 40px;
+    font-size: 17px;
+    color: #333;
+    margin:0;
+}
+.signupStyle input[type="submit"]:hover {
+    background:#2cb72a;
+    color:#fff;
+}
+
+/*not sign in*/
+#not_sign_in {
+    background-image: url('../img/dpgbg/jpt_bg_not_signin.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100%;
+    position: absolute;
+}
+
+/* personal edit page setting*/
+.personalStyle {
+    width: 850px;
+    height: 600px;
+    margin-top: 7%;
+    margin-left : auto;
+    margin-right : auto;
+    font-family:Arial;
+    background:#fff;
+}
+
+.personalStyle th {
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:2px solid #eee;
+}
+
+.personalStyle input {
+    width:160px;
+    line-height:30px;
+}
+
+.personalStyle tr td{
+    height:70px;
+}
+
+.personalNormalTextBox {
+    height: 20px; 
+    width: 180px
+}
+.personalStyle input[type="submit"] {
+    width:25%;
+    float:right;
+    background:#bbb;
+    border:none;
+    line-height: 40px;
+    font-size: 17px;
+    color: #333;
+    margin:0 10px;
+}
+.personalStyle input[type="submit"]:hover {
+    background:#2cb72a;
+    color:#fff;
+}
+
+/* personal edit page setting*/
+.PanelUploadPicturePage {
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 45px;
+}
+
+.UploadPictureStyle {
+    width: 700px;
+    height: 100%;
+    margin-top: 10px;
+    margin-left : auto;
+    margin-right : auto;
+    font-family:Arial;
+    background:#fff;
+}
+
+.UploadPictureStyle th {
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:2px solid #eee;
+}
+
+.UploadPictureStyle input {
+    width:160px;
+    line-height:30px;
+}
+
+.UploadPictureStyle tr td{
+    height:70px;
+}
+.UploadPictureStyle input[type="submit"] {
+    width:25%;
+    float:right;
+    background:#bbb;
+    border:none;
+    line-height: 40px;
+    font-size: 17px;
+    color: #333;
+    margin:0 10px;
+}
+.UploadPictureStyle input[type="submit"]:hover {
+    background:#2cb72a;
+    color:#fff;
+}
+
+/* head picture edit page setting*/
+.uploadHeadBlock {
+    width: 700px;
+    margin: 7% auto;
+    font-family:Arial;
+    background:#fff;
+}
+
+.uploadHeadBlock th {
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:2px solid #eee;
+}
+#BtnUserHeadPicPageReset {
+    width:100%;
+    margin: 5px 0px 5px 0px;
+    padding: 0px;
+    background-color: #446CB3;
+    border:none;
+    line-height: 30px;
+    font-size: 15px;
+    color: #fff;
+}
+#BtnUserHeadPicPageReset:hover {
+    background-color:#81CFE0;
+    color:#333;
+}
+#BtnUserHeadPicPageUpload, #BtnUserHeadPicPageCancel {
+    width:100%;
+    margin: 0px;
+    padding: 0px;
+    background:#bbb;
+    border:none;
+    line-height: 30px;
+    font-size: 15px;
+    color: #333;
+}
+#BtnUserHeadPicPageUpload:hover, #BtnUserHeadPicPageCancel:hover {
+    background-color:#2cb72a;
+    color:#fff;
+}
+
+#PlaceHolderHomePageDiaplay {
+    margin-top: 5%;
+}
+
+.btnDelectPhoto {
+    width:20px;
+    height:20px;
+    float: right;
+    top: -10px;
+    right: -30px;
+    position: relative;
+}

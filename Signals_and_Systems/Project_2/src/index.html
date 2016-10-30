@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Signals and Systems - Project 2</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/c3.min.css">
+    <link rel="stylesheet" href="css/lobipanel.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div class="page-header page-header-style">
+        <h1>Project 2<small>Response to Arbitrary Signal and Frequency Response of a Linear Time-Invariant System</small></h1>
+    </div>
+    <div class="page-container">
+        <div class="row row-margin-bottom">
+            <div class="col-md-2">
+                <p class="text-center p-vertial-center">取樣頻率(Hz)</p>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group diff-equation-input">
+                    <input type="text" class="form-control" id="InputSampleRate" placeholder="請輸入取樣頻率" value="10" data-toggle="tooltip" title="滾動滑鼠滾輪調整數值" data-placement="bottom">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-info" type="button" id="ScrollSampleRate" data-toggle="tooltip" title="滾動滑鼠滾輪調整數值" data-placement="bottom"><i class="fa fa-arrows-v fa-lg" aria-hidden="true"></i></button>
+                        <button class="btn btn-default btn-danger" type="button" id="ResetSampleRate" data-toggle="tooltip" title="重設「取樣頻率」數值" data-placement="bottom"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                    </span>
+                </div>
+                <br>
+                <div id="InputSampleRateValueErrorMsg" class="alert alert-danger" style="display: none;">
+                </div>
+            </div>
+            <div class="col-md-1">
+                <p id="InputPeriodOrNvalue" class="text-center p-vertial-center">週期數(T)</p>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group diff-equation-input">
+                    <input type="text" class="form-control" id="InputPeriodNumber" placeholder="輸入週期數" value="1" data-toggle="tooltip" title="滾動滑鼠滾輪調整數值" data-placement="bottom">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-info" type="button" id="ScrollPeriodNumberValue" data-toggle="tooltip" title="滾動滑鼠滾輪調整數值" data-placement="bottom"><i class="fa fa-arrows-v fa-lg" aria-hidden="true"></i></button>
+                        <button class="btn btn-default btn-danger" type="button" id="ResetPeriodNumber" data-toggle="tooltip" title="重設「週期數」數值" data-placement="bottom"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                    </span>
+                </div>
+                <br>
+                <div id="InputPeriodNumberValueErrorMsg" class="alert alert-danger" style="display: none;">
+                </div>
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-default btn-success btn-block" type="button" id="SetEquation" data-toggle="tooltip" title="計算結果並顯示" data-placement="bottom">開始計算</button>
+            </div>
+        </div>
+        <div class="row row-margin-bottom">
+            <div class="col-md-2">
+                <p class="text-center p-vertial-center">系統輸入訊號</p>
+            </div>
+            <div class="col-md-1">
+                <p class=" text-center p-vertial-center p-letter-spacing">x(t)=</p>
+            </div>
+            <div class="col-md-7">
+                <div class="input-group diff-equation-input">
+                    <input type="text" class="form-control" id="InputSignalEquation" placeholder="unit step, unit sample, sin, cos..." value="" data-toggle="tooltip" title="點選右邊「？」觀看輸入格式說明" data-placement="bottom">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-info" type="button" id="InputSignalTip" data-toggle="tooltip" title="「系統輸入訊號」格式說明" data-placement="bottom"><i class="fa fa-question fa-lg" aria-hidden="true"></i></button>
+                        <button class="btn btn-default btn-danger" type="button" id="ResetInputSignal" data-toggle="tooltip" title="清除「系統輸入訊號」" data-placement="bottom"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                    </span>
+                </div>
+                <br>
+                <div id="InputSignalErrorMsg" class="alert alert-danger" style="display: none;">
+                </div>
+            </div>
+        </div>
+        <div class="row row-margin-bottom">
+            <div class="col-md-2">
+                <p class="text-center p-vertial-center">系統（差分方程式）</p>
+            </div>
+            <div class="col-md-1">
+                <p class="text-center p-vertial-center p-letter-spacing">y[n]=</p>
+            </div>
+            <div class="col-md-7">
+                <div class="input-group diff-equation-input">
+                    <input type="text" class="form-control" id="InputTransferFunction" placeholder="(差分方程式, 格式: ax[n]+b*x[n-1]+...+c*y[n-1]+dy[n-2]+...)" value="">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-danger" type="button" id="ResetTransferFunction" data-toggle="tooltip" title="清除「系統之差分方程式」" data-placement="bottom"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                    </span>
+                </div>
+                <br>
+                <div id="InputTransferFunctionErrorMsg" class="alert alert-danger" style="display: none;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-4">
+                <h4 class="text-center">任意輸入之系統響應</h4>
+            </div>
+            <div class="col-md-2 col-md-offset-1">
+                <div style="display: inline-block;">
+                    <div style="display: inline-block; vertical-align: middle; font-size: 13pt; margin-right: 10px;">
+                        <div style="display: inline-block; background-color: #ff0000; border-radius: 10px; width: 10px; height: 10px; margin-right: 5px;"></div>y[n]</div>
+                    <div style="display: inline-block; vertical-align: middle; font-size: 13pt; margin-right: 10px;">
+                        <div style="display: inline-block; background-color: #A5D6A7; border-radius: 10px; width: 10px; height: 10px; margin-right: 5px;"></div>x[n]</div>
+                    <div style="display: inline-block; vertical-align: middle; font-size: 13pt; margin-right: 10px;">
+                        <div style="display: inline-block; background-color: #90CAF9; border-radius: 10px; width: 10px; height: 10px; margin-right: 5px;"></div>h[n]</div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-default btn-danger btn-block" type="button" id="ResetSystemResponse" data-toggle="tooltip" title="清除系統響應結果" data-placement="bottom"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <p class="text-center">
+                    <span id="SystemResponse"></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <button class="btn btn-default btn-danger btn-block" type="button" id="ResetFrMagnitude" data-toggle="tooltip" title="清除系統大小頻率響應結果" data-placement="bottom"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+            </div>
+            <div class="col-md-1">
+                <div style="display: inline-block;">
+                    <div style="display: inline-block; vertical-align: middle; font-size: 13pt; margin-right: 10px;">
+                        <div style="display: inline-block; background-color: #ff0000; border-radius: 10px; width: 10px; height: 10px; margin-right: 5px;"></div>非理論</div>
+                    <div style="display: inline-block; vertical-align: middle; font-size: 13pt; margin-right: 10px;">
+                        <div style="display: inline-block; background-color: #0000ff; border-radius: 10px; width: 10px; height: 10px; margin-right: 5px;"></div>理論</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-center">(logw)整數範圍：</h4>
+                <br>
+                <div id="InputLogwErrorMsg" class="alert alert-danger" style="display: none;">
+                </div>
+            </div>
+            <div class="col-md-1">
+                <input type="text" class="form-control" id="InputLogwLower" placeholder="logw 下限數值" value="-5">
+            </div>
+            <div class="col-md-1">
+                <p class="text-center">～</p>
+            </div>
+            <div class="col-md-1">
+                <input type="text" class="form-control" id="InputLogwUpper" placeholder="logw 上限數值" value="5">
+            </div>
+            <div class="col-md-1">
+                <div style="display: inline-block;">
+                    <div style="display: inline-block; vertical-align: middle; font-size: 13pt; margin-right: 10px;">
+                        <div style="display: inline-block; background-color: #ff0000; border-radius: 10px; width: 10px; height: 10px; margin-right: 5px;"></div>非理論</div>
+                    <div style="display: inline-block; vertical-align: middle; font-size: 13pt; margin-right: 10px;">
+                        <div style="display: inline-block; background-color: #0000ff; border-radius: 10px; width: 10px; height: 10px; margin-right: 5px;"></div>理論</div>
+                </div>
+            </div>
+            <div class="col-md-1 col-md-offset-1">
+                <button class="btn btn-default btn-danger btn-block" type="button" id="ResetFrPhase" data-toggle="tooltip" title="清除系統相位角頻率響應結果" data-placement="bottom"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <p class="text-center">
+                    <span id="frMagnitude"></span>
+                </p>
+            </div>
+            <div class="col-md-5">
+                <p class="text-center">
+                    <span id="frPhase"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- javascript for this application -->
+    <script src="js/jquery-2.2.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.caret.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/lobipanel.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/fraction.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/complex.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/math.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/d3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/function-plot.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.parameters.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.polynomial.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Signals and Systems - Project 1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/c3.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div class="page-header page-header-style">
+        <h1>Project 1<small>Simulation for the Unit-Step Response and Unit-Sample Response of a General Discrete-Time System</small></h1>
+    </div>
+    <div class="page-container">
+        <div class="row row-margin-bottom">
+            <div class="col-md-3">
+                <p class="text-center p-vertial-center">First N value</p>
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                <div class="input-group diff-equation-input">
+                    <input type="text" class="form-control" id="InputNvalue" placeholder="Enter first N value (default: 10, max: 200)">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-info" type="button" id="ScrollNvalue" data-toggle="tooltip" title="Scroll to adjust.">
+                            <i class="fa fa-arrows-v fa-lg" aria-hidden="true"></i></button>
+                        <button class="btn btn-default btn-danger" type="button" id="ResetN" data-toggle="tooltip" title="Clear N value."><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                        <button class="btn btn-default btn-success" type="button" id="SetEquation1" onclick="setEquation();" data-toggle="tooltip" title="Plot result.">Set</button>
+                    </span>
+                </div>
+                <br>
+                <div id="InputNvalueErrorMsg" class="alert alert-danger" style="display: none;">
+                </div>
+            </div>
+        </div>
+        <div class="row row-margin-bottom">
+            <div class="col-md-3">
+                <p class="text-center p-vertial-center">System (Difference Equation)</p>
+            </div>
+            <div class="col-md-1">
+                <p class="text-center p-vertial-center p-letter-spacing">y[n]=</p>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group diff-equation-input">
+                    <input type="text" class="form-control" id="InputEquation" placeholder="(Difference Equation, format: ax[n]+b*x[n-1]+...+c*y[n-1]+dy[n-2]+...)">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-info" type="button" id="OpenEqNumPad" data-toggle="tooltip" title="Open input pad.">
+                            <i class="fa fa-calculator" aria-hidden="true"></i></button>
+                        <button class="btn btn-default btn-danger" type="button" id="ResetAll" data-toggle="tooltip" title="Clear all input."><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                        <button class="btn btn-default btn-success" type="button" id="SetEquation" onclick="setEquation();" data-toggle="tooltip" title="Plot result.">Set</button>
+                    </span>
+                </div>
+                <br>
+                <div id="InputEqErrorMsg" class="alert alert-danger" style="display: none;">
+                </div>
+            </div>
+        </div>
+        <div class="row row-margin-bottom">
+            <div class="col-md-4">
+                <p class="text-center p-vertial-center"><strong>Convergent:</strong><br></p>
+                <p class="text-left p-vertial-center" id="detVergent"></p>
+            </div>
+            <div class="col-md-2">
+                <p class="text-center p-vertial-center"><strong>Constant:</strong><br></p>
+                <p class="text-left p-vertial-center" id="detConstant"></p>
+            </div>
+            <div class="col-md-2">
+                <p class="text-center p-vertial-center"><strong>Pole(s):</strong><br></p>
+                <p class="text-left p-vertial-center" id="detPoles"></p>
+            </div>
+            <div class="col-md-2">
+                <p class="text-center p-vertial-center"><strong>Zero(s):</strong><br></p>
+                <p class="text-left p-vertial-center" id="detZeros"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <p class="text-center">Unit-Step</p>
+                <div class="chart-style">
+                    <div id="unitStepChart"></div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <p class="text-center">Unit-Sample</p>
+                <div class="chart-style">
+                    <div id="unitSampleChart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        </div>
+    </div>
+    <!-- Bootstrap Model for Calculator -->
+    <div class="modal fade" id="eqCalculator" tabindex="-1" role="dialog" aria-labelledby="eqCalculator">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close close-style" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title modal-title-style" id="eqCalculatorLabel">Difference Equation Touch</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="diffeq--pad-page">
+                        <div class="diffeq-pad-input">
+                            <input id="diffeq-pad-input" type="text" placeholder="Diff. Eq. ax[n]+b*x[n-1]+...+c*y[n-1]+dy[n-2]+...)">
+                            <span id="diffeq-pad-input-clear" class="diffeq-pad-input-clear"></span>
+                        </div>
+                        <div class="diffeq-pad-numpad">
+                            <div class="diffeq-pad-numpad-content">
+                                <div class="diffeq-pad-numpad-btn-group">
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(7, setEquation)"><p>7</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(8, setEquation)"><p>8</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(9, setEquation)"><p>9</p>
+                                    </a><a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad('*', setEquation)"><p>*</p></a>
+                                </div>
+                                <div class="diffeq-pad-numpad-btn-group">
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(4, setEquation)"><p>4</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(5, setEquation)"><p>5</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(6, setEquation)"><p>6</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad('/', setEquation)"><p>/</p></a>
+                                </div>
+                                <div class="diffeq-pad-numpad-btn-group">
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(1, setEquation)"><p>1</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(2, setEquation)"><p>2</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(3, setEquation)"><p>3</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad('-', setEquation)"><p>-</p></a>
+                                </div>
+                                <div class="diffeq-pad-numpad-btn-group">
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad('n', setEquation)"><p>n</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(0, setEquation)"><p>0</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad('.', setEquation)"><p>.</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad('+', setEquation)"><p>+</p></a>
+                                </div>
+                                <div class="diffeq-pad-numpad-btn-group">
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad('(', setEquation)"><p>(</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(')', setEquation)"><p>)</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad('[', setEquation)"><p>[</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(']', setEquation)"><p>]</p></a>
+                                </div>
+                                <div class="diffeq-pad-numpad-btn-group">
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad('x', setEquation)"><p>x</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad('y', setEquation)"><p>y</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(-1, setEquation)"><p>←</p></a>
+                                    <a class="diffeq-pad-numpad-btn" onclick="javascript:eqNumPad(10, setEquation)"><p>Set</p></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-warning" data-dismiss="modal">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- javascript for this application -->
+    <script src="js/jquery-2.2.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.caret.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/fraction.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/complex.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/math.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/d3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/c3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.parameters.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.polynomial.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

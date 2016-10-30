@@ -1,0 +1,233 @@
+p {
+    font-size: 16px;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+.page-container {
+    background-color: #FFF;
+    padding: 2vw 0 0 0;
+}
+
+.page-header-style {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
+.page-header-style h1 {
+    margin: 0;
+    padding: 3vw 0 1.5vw 3vw;
+    font-size: 4vw;
+}
+
+.page-header-style h1 small {
+    font-size: 1.3vw;
+    color: #C8E6C9;
+}
+
+.p-vertial-center {
+    line-height: 2em;
+}
+
+.p-letter-spacing {
+    letter-spacing: 0.12em;
+}
+
+.display-inline {
+    display: inline-block;
+}
+
+.row-margin-bottom {
+    margin-bottom: 10px;
+}
+
+.col-no-margin {
+    margin: 0px;
+}
+
+.col-no-padding {
+    padding: 0px;
+}
+
+.row-style {
+    background-color: #ffffff;
+}
+
+.col-style {
+    background-color: #ffffff;
+}
+
+.chart-style {
+    background-color: #ffffff;
+    padding: 2vw 0vw 0vw 0vw;
+}
+
+.diff-equation-input input {
+    background-color: #ffffff;
+    border-bottom: #666 1px solid;
+    color: #000;
+    padding-left: 5px;
+    margin: 0px;
+    font-size: 16px;
+    width: 100%;
+    letter-spacing: 0.12em;
+}
+
+.diffeq-pad-input {
+    background-color: #333645;
+    height: 120px;
+    padding: 20px 20px;
+    width: 100%;
+    display: inline-block;
+}
+
+.diffeq-pad-input input {
+    background-color: #23242e;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    font-size: 45px;
+    padding: 5px 20px;
+    width: 90%;
+}
+
+.diffeq-pad-page {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+}
+
+.diffeq-pad-input-clear {
+    background-image: url(../img/eq_cancel.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    margin-left: 3%;
+}
+
+.diffeq-pad-numpad {
+    background-color: #FFFFFF;
+    padding-top: 0;
+    width: 100%;
+}
+
+.diffeq-pad-numpad-content {
+    background-color: #f3f3f3;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.diffeq-pad-numpad-btn-group {
+    display: inline-block;
+}
+
+.diffeq-pad-numpad-btn {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 3px 3px 9px #727272;
+    cursor: pointer;
+    display: inline-table;
+    height: 8vh;
+    margin: 10px 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 9vw;
+}
+
+.close-style {
+    font-size: 40px;
+}
+
+.modal-title-style {
+    line-height: 2;
+}
+
+.diffeq-pad-numpad-btn-longer {
+    width: 360px;
+}
+
+.diffeq-pad-numpad-btn-disabled:hover {
+    color: #dfdfdf;
+    margin-top: 0px;
+}
+
+.diffeq-pad-numpad-btn-disabled {
+    color: #dfdfdf;
+    cursor: default;
+    pointer-events: none;
+}
+
+.diffeq-pad-numpad-btn p {
+    color: #4CAF50;
+    display: table-cell;
+    font-size: 38px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.diffeq-pad-numpad-btn-disabled p {
+    color: #dfdfdf;
+    display: table-cell;
+    font-size: 38px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.diffeq-pad-numpad-btn:hover,
+.diffeq-pad-numpad-btn:visited {
+    color: #00c7d3;
+    text-decoration: none;
+}
+
+.diffeq-pad-numpad-btn:active {
+    box-shadow: -2px -2px 0px #d6d6d6;
+}
+
+.diffeq-pad-numpad-btn:active p {
+    left: 2px;
+    position: relative;
+    top: 2px;
+}
+
+
+/*** Works on common browsers ***/
+
+::selection {
+    background-color: #4CAF50;
+    color: #C8E6C9;
+}
+
+::-moz-selection {
+    background-color: #4CAF50;
+    color: #C8E6C9;
+}
+
+::-o-selection {
+    background-color: #4CAF50;
+    color: #C8E6C9;
+}
+
+::-ms-selection {
+    background-color: #4CAF50;
+    color: #C8E6C9;
+}
+
+::-webkit-selection {
+    background-color: #4CAF50;
+    color: #C8E6C9;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
+}
