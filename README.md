@@ -2,32 +2,32 @@
 I am **Shih-Hao Huang**. All of my works are published in this repository when I study in the Department of Computer Science and information Engineering National University of Tainan, Taiwan.
 
 # Courses:
-### Algorithms  
+### Algorithms (C/C++)  
 * Minimum Distance  
 * Friends Graph  
 * Dictionary using Hashing  
 * Plagiarism Detection based on Edit Distance  
   
-### Assembly Languages and System Programming  
+### Assembly Languages and System Programming (C/C++, Qt)  
 * SIC/XE One Step Execution Simulator  
   
-### Computer Graphics  
+### Computer Graphics (WebGL, HTML5, CSS, JavaScript, Bootstrap, JQuery)  
 * A robot simulator based on WebGL  
   
-### Data Structures  
+### Data Structures (Java)  
 * A Matrices Calculator  
 * A Game of the Loser-Tree  
   
-### Database Systems  
+### Database Systems (HTML5, CSS, JavaScript, Bootstrap, JQuery, PHP, MySQL)  
 * Membership Management System for O2 Fitness Center  
   
-### Image Processing  
+### Image Processing (C/C++, Qt)  
 * A Image Browser for the BMP Format  
   
-### Interactive Web Site Design  
+### Interactive Web Site Design (HTML5, CSS, JavaScript, Bootstrap, JQuery, ASP.NET, VB)  
 * "Just Photo" is a website based on ASP.NET and VB languages, and is a website that anyone can share and upload his/her photo.  
   
-### Network Programming  
+### Network Programming (Java)  
 * A network searching service for books.com  
 * A FTP Client  
 * An Interface Design of Interactive Windows  
@@ -36,6 +36,6 @@ I am **Shih-Hao Huang**. All of my works are published in this repository when I
 * An Email Sending and Receiving System  
 * A Network Media Player  
   
-### Signals and Systems  
+### Signals and Systems (HTML5, CSS, JavaScript, Bootstrap, JQuery)  
 * Simulation for the Unit-Step Response and Unit-Sample Response of a General Discrete-Time System  
 * Response to Arbitrary Signal and Frequency Response of a Linear Time-Invariant System  
